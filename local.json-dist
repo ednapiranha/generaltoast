@@ -8,7 +8,7 @@
     "full_name": "your name",
     "username": "your username",
     "url": "your url",
-    "db": 1,
+    "db": "./db",
     "debug": true,
     "s3_key": "your s3 key",
     "s3_secret": "your s3 secret",
