@@ -195,7 +195,7 @@ article p:empty {
     display: none;
 }
 
-body[data-page="index"] .links img {
+body[data-page="index"] .links img, body[data-page="post"] .links img {
     width: 135%;
 }
 
