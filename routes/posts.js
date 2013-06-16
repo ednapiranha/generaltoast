@@ -185,7 +185,9 @@ module.exports = function (app, meat, nconf, isAdmin) {
       im.resize({
         srcPath: req.files.photo.path,
         dstPath: req.files.photo.path,
-        width: PHOTO_WIDTH
+        width: PHOTO_WIDTH,
+        quality: 0.8,
+        format: 'jpg'
       }, function (err, stdout, stderr) {
         if (err) {
           res.status(400);
