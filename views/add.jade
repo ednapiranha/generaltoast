@@ -7,9 +7,9 @@ block content
 
       form(method='post', action='/add', enctype='multipart/form-data')
         textarea(name='message')
-        input(type='text', name='url', placeholder='url')
+        input(type='text', name='url', placeholder='url', autocomplete='off')
         input(type='file', name='photo')
-        input(type='text', name='geolocation', placeholder='geolocation')
+        input(type='text', name='geolocation', placeholder='geolocation', autocomplete='off')
         label(for='is_private')
           span Is private?
           input(type='checkbox', name='is_private')

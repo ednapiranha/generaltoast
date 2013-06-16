@@ -7,7 +7,7 @@ block content
 
       form(method='post', action='/edit/#{post.id}')
         textarea(name='message')= post.content.message
-        input(type='text', name='url', placeholder='url', value='#{postUrl}')
+        input(type='text', name='url', placeholder='url', value='#{postUrl}', autocomplete='off')
         input(type='hidden', name='geolocation', value='#{geolocation}', placeholder='geolocation')
         label(for='is_private')
           span Is private?
