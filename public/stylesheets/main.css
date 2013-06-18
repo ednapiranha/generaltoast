@@ -164,7 +164,7 @@ textarea {
 }
 
 article {
-    background-color: rgba(2, 2, 2, 0.8);
+    background-color: #111;
     color: #444;
     display: inline-block;
     float: left;
@@ -195,11 +195,28 @@ article p:empty {
     display: none;
 }
 
-body[data-page="index"] .links img, body[data-page="post"] .links img {
-    width: 135%;
+.links .image {
+    background-repeat: no-repeat;
+    display: block;
+    height: 290px;
+    width: 290px;
 }
 
-body[data-page="landing"] .links img {
+body[data-page="index"] .links .image, body[data-page="landing"] .links .image {
+    background-size: cover;
+}
+
+body[data-page="index"] .links img, body[data-page="landing"] .links img {
+    display: none;
+}
+
+body[data-page="post"] .links .image {
+    background-image: none;
+    height: 100%;
+    width: 100%;
+}
+
+body[data-page="post"] .links img {
     width: 100%;
 }
 

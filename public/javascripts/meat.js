@@ -27,7 +27,8 @@ define(['jquery', 'moment'],
 
         if (url.url.match(/\.[jpg|jpeg|gif|png]\??/i)) {
           result = '<a class="image" href="' + url.url + '" title="' +
-            url.title + '"><img src="' + url.url + '"></a>';
+            url.title + '" style="background-image: url(' + url.url + ');">' +
+            '<img src="' + url.url + '"></a>';
         } else {
           result = '<a class="link" href="' + url.url + '" title="' +
             url.title + '">' + url.title + '</a>';
