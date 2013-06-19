@@ -202,11 +202,11 @@ article p:empty {
     width: 290px;
 }
 
-body[data-page="index"] .links .image, body[data-page="landing"] .links .image {
+body[data-page="index"] .image, body[data-page="landing"] .image {
     background-size: cover;
 }
 
-body[data-page="index"] .links img, body[data-page="landing"] .links img {
+body[data-page="index"] img, body[data-page="landing"] img {
     display: none;
 }
 
