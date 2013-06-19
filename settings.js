@@ -32,6 +32,7 @@ module.exports = function(app, configurations, express) {
       res.locals.isDebug = nconf.get('debug');
       res.locals.analytics = nconf.get('analytics');
       res.locals.analyticsHost = nconf.get('analyticsHost');
+      res.locals.siteTitle = nconf.get('siteTitle');
       next();
     });
     app.locals.pretty = true;
