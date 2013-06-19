@@ -1,3 +1,5 @@
+'use strict';
+
 // Module dependencies.
 module.exports = function(app, configurations, express) {
   var clientSessions = require('client-sessions');

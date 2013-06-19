@@ -154,15 +154,17 @@ define(['jquery', 'moment'],
           body.find('.pagination a').addClass('hidden');
         }
 
-        $.getJSON('/subscription/all', function (data) {
-          if (data.posts) {
-            body.find('.subscriptions').empty();
+        if (body.find('.container.last article').length < 1) {
+          $.getJSON('/subscription/all', function (data) {
+            if (data.posts) {
+              body.find('.subscriptions').empty();
 
-            for (var i = 0; i < data.posts.length; i ++) {
-              body.find('.subscriptions').append(generatePost(data.posts[i], false, true));
+              for (var i = 0; i < data.posts.length; i ++) {
+                body.find('.subscriptions').append(generatePost(data.posts[i], false, true));
+              }
             }
-          }
-        });
+          });
+        }
       });
     },
 
