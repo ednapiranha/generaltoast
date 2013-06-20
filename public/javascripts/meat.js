@@ -116,6 +116,8 @@ define(['jquery', 'moment'],
           prev.addClass('hidden');
         }
 
+        body[0].scrollIntoView(true);
+
         body.find('.pagination a').attr('data-prev', data.prev)
                                   .attr('data-next', data.next);
       }
@@ -152,6 +154,7 @@ define(['jquery', 'moment'],
               .attr('data-url', '/post/' + data.post.id);
           body.find('.messages').html(generatePost(data.post, data.isAdmin, false)).append(dateInfo);
           body.find('.pagination a').addClass('hidden');
+          body[0].scrollIntoView(true);
         }
 
         if (body.find('.container.last article').length < 1) {
