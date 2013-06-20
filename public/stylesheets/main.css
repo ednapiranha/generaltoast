@@ -206,7 +206,7 @@ body[data-page="index"] .image, body[data-page="landing"] .image {
     background-size: cover;
 }
 
-body[data-page="index"] img, body[data-page="landing"] img {
+body[data-page="index"] .links img, body[data-page="landing"] .links img {
     display: none;
 }
 
@@ -216,7 +216,7 @@ body[data-page="post"] .messages .image {
     width: 100%;
 }
 
-body[data-page="post"] .links img {
+body[data-page="post"] .messages img {
     width: 100%;
 }
 
