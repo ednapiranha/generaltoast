@@ -202,7 +202,7 @@ article p:empty {
     width: 290px;
 }
 
-body[data-page="index"] .image, body[data-page="landing"] .image {
+body[data-page="index"] .image, body[data-page="landing"] .image, .subscriptions .image {
     background-size: cover;
 }
 
