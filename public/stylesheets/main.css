@@ -206,7 +206,7 @@ body[data-page="index"] .image, body[data-page="landing"] .image, .subscriptions
     background-size: cover;
 }
 
-body[data-page="index"] .links img, body[data-page="landing"] .links img {
+body[data-page="index"] .links img, body[data-page="landing"] .links img, .subscriptions .image img {
     display: none;
 }
 
