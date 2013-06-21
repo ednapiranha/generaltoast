@@ -23,16 +23,15 @@ module.exports = function (app, meat, nconf, isAdmin) {
               } else {
                 posts = posts.concat(pArr);
               }
-
-              if (posts.length > SUBSCRIPTION_MAX) {
-                posts.splice(SUBSCRIPTION_MAX, posts.length - SUBSCRIPTION_MAX);
-              }
             }
 
             if (count === subscriptions.length) {
               posts = posts.sort(function (a, b) {
                 return parseInt(b.content.created, 10) - parseInt(a.content.created, 10);
               });
+              if (posts.length > SUBSCRIPTION_MAX) {
+                posts.splice(SUBSCRIPTION_MAX, posts.length - SUBSCRIPTION_MAX);
+              }
               res.json({ posts: posts });
             }
           });
