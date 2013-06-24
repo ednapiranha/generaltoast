@@ -241,13 +241,13 @@ body[data-page="post"] .content-container {
 
 body[data-page="post"] .messages {
     margin: 0 auto;
-    width: 500px;
+    width: 400px;
 }
 
 body[data-page="post"] .messages article {
     height: auto;
     min-height: 240px;
-    width: 500px;
+    width: 400px;
 }
 
 body[data-page="post"] .messages .links:not(:empty) {
