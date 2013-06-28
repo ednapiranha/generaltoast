@@ -26,7 +26,7 @@ define(['jquery', 'moment'],
         var result = '';
 
         if (url.url.match(/\.[jpg|jpeg|gif|png]\??/i)) {
-          result = '<a class="image" href="' + url.url + '" title="' +
+          result = '<a class="image" href="javascript:;" title="' +
             url.title + '" style="background-image: url(' + url.url + ');">' +
             '<img src="' + url.url + '"></a>';
         } else {
