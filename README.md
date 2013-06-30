@@ -30,7 +30,7 @@ If you're on OSX you can run the following:
 
 But it is preferable to do the following:
 
-[Install leveldb](http://code.google.com/p/leveldb/downloads/list)
+[Install leveldb manually](http://code.google.com/p/leveldb/downloads/list)
 
 ## Install imagemagick
 
