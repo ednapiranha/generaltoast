@@ -24,7 +24,13 @@ Include your Amazone S3 key, secret and bucket in local.json so that you can upl
 
 ### Install leveldb
 
+If you're on OSX you can run the following:
+
 > brew install leveldb
+
+But it is preferable to do the following:
+
+[Install leveldb](http://code.google.com/p/leveldb/downloads/list)
 
 ## Install imagemagick
 
