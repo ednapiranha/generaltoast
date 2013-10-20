@@ -19,10 +19,32 @@ module.exports = function (app, meat, nconf, isAdmin) {
   };
 
   app.get('/recent', function (req, res) {
+    var prevPage = 0;
+    var nextPage = 0;
+    var currPage = 0;
+
+    if (req.query.start) {
+      currPage = parseInt(req.query.start, 10) || 0;
+    }
+
     meat.shareRecent(req.query.start || 0, function (err, posts) {
+      nextPage = currPage + 1;
+
+      if (posts.length < meat.limit) {
+        nextPage = false;
+      }
+
+      prevPage = currPage - 1;
+
+      if (prevPage < 0) {
+        prevPage = false;
+      }
+
       res.json({
         posts: posts,
-        total: meat.totalPublic
+        total: posts.length,
+        prev: prevPage,
+        next: nextPage
       });
     });
   });
@@ -63,7 +85,20 @@ module.exports = function (app, meat, nconf, isAdmin) {
   });
 
   app.get('/all', function (req, res, next) {
-    var pagination = utils.setPagination(req, meat);
+    var prevPage = 0;
+    var nextPage = 0;
+    var currPage = 0;
+
+    if (req.query.start) {
+      currPage = parseInt(req.query.start, 10) || 0;
+    }
+
+    nextPage = currPage + 1;
+    prevPage = currPage - 1;
+
+    if (prevPage < 0) {
+      prevPage = false;
+    }
 
     if (utils.isEditor(req)) {
       meat.getAll(req.query.start || 0, function (err, posts) {
@@ -71,12 +106,17 @@ module.exports = function (app, meat, nconf, isAdmin) {
           res.status(404);
           res.json({ message: 'not found' });
         } else {
+
+          if (posts.length < meat.limit) {
+            nextPage = false;
+          }
+
           res.json({
             posts: posts,
             isAdmin: true,
-            prev: pagination.prev,
-            next: pagination.next,
-            total: meat.totalAll
+            prev: prevPage,
+            next: nextPage,
+            currPage: currPage
           });
         }
       });
@@ -86,12 +126,17 @@ module.exports = function (app, meat, nconf, isAdmin) {
           res.status(404);
           res.json({ message: 'not found' });
         } else {
+
+          if (posts.length < meat.limit) {
+            nextPage = false;
+          }
+
           res.json({
             posts: posts,
             isAdmin: false,
-            prev: pagination.prev,
-            next: pagination.next,
-            total: meat.totalPublic
+            prev: prevPage,
+            next: nextPage,
+            currPage: currPage
           });
         }
       });

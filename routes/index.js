@@ -11,14 +11,10 @@ module.exports = function (app, meat, nconf, isAdmin) {
       req.session.isAdmin = true;
     }
 
-    var pagination = utils.setPagination(req, meat);
-
     res.render('index', {
       url: '/',
       isAdmin: isAdmin,
-      page: 'index',
-      prev: pagination.prev,
-      next: pagination.next
+      page: 'index'
     });
   });
 
