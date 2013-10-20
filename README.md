@@ -36,7 +36,7 @@ If you run this in dev, you don't need to do anything by default. If you run thi
 
 ## Run the server
 
-> node app.js
+> npm start
 
 ## Subscribing to other meatspaces
 
