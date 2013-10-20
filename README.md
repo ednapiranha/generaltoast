@@ -8,9 +8,9 @@ This is a sample micro[b]log app using [meatspace](https://npmjs.org/package/mea
 
 > git clone -b leveldb git://github.com/ednapiranha/generaltoast.git
 
-### Install grunt
+### Install grunt and nodemon
 
-> npm install -g grunt-cli
+> npm install -g grunt-cli nodemon
 
 ### Copy over json files and adjust values as needed
 
