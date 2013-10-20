@@ -26,7 +26,7 @@ var meat = new Meatspace({
   username: nconf.get('username'),
   postUrl: nconf.get('url'),
   db: nconf.get('db'),
-  limit: 7
+  limit: 12
 });
 
 require('express-persona')(app, {
